@@ -13,10 +13,10 @@ class _ProfilePageState extends State<ProfilePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-              backgroundColor: Colors.white,
+              backgroundColor: Colors.orangeAccent,
               title: Text("MAID MATCH", style: Styles.headlineStyle, textAlign:TextAlign.center,),
               leading: IconButton(
-              icon: Icon(Icons.menu, color: Colors.black),
+              icon: Icon(Icons.arrow_back, color: Colors.black),
               onPressed: () {
             Scaffold.of(context).openDrawer();
           },
