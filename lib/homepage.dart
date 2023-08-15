@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
+import 'package:lottie/lottie.dart';
 import 'package:maidsmatch_maids/utils/app_styles.dart';
 
 class WelcomePage extends StatefulWidget {
@@ -49,13 +51,18 @@ class _WelcomePageState extends State<WelcomePage> {
         child: Center(
           child: Column(
             children: [
-              
+              Gap(30),
+              Text("hello, user!"),
+              Gap(30),
+
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Container(
                     width: 100,
                     height: 100,
+                    child:LottieBuilder.asset("assets/wallet.json",
+                        ),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(16), 
@@ -73,6 +80,8 @@ class _WelcomePageState extends State<WelcomePage> {
                   Container(
                     width: 100,
                     height: 100,
+                    child:LottieBuilder.asset("assets/animation_llb16u5r.json",
+                        ),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(16), 

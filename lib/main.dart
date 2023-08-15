@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'welcome_scrn.dart';
+import 'package:maidsmatch_maids/welcome.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -10,6 +11,6 @@ class MyApp extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false, home:WelcomeScreen());
+    return MaterialApp(debugShowCheckedModeBanner: false, home:welcampage());
   }
 }

@@ -1,0 +1,90 @@
+{
+  "project_info": {
+    "project_number": "431535707736",
+    "project_id": "maidmatch-4c8e2",
+    "storage_bucket": "maidmatch-4c8e2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:431535707736:android:c1b74986fd415ba877dc2d",
+        "android_client_info": {
+          "package_name": "com.example.maidmatch_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "431535707736-3oqe8p3tiea0mb855c1djevjiefvge7a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.maidmatch_app",
+            "certificate_hash": "c83ebc7215c2b5605045ae63eadca94840b3eb95"
+          }
+        },
+        {
+          "client_id": "431535707736-mbhj01j48ooknbt54kvpjqqcfa4deot8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAWQak7sUWJX3q9NYTjA9DHdzhVLqoVyGM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "431535707736-mbhj01j48ooknbt54kvpjqqcfa4deot8.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "431535707736-hmqhc0jht892fgmr9qho0pldcehac3qf.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.maidmatchApp"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:431535707736:android:438321957303386c77dc2d",
+        "android_client_info": {
+          "package_name": "com.example.maidsmatch_maids"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "431535707736-mbhj01j48ooknbt54kvpjqqcfa4deot8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAWQak7sUWJX3q9NYTjA9DHdzhVLqoVyGM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "431535707736-mbhj01j48ooknbt54kvpjqqcfa4deot8.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "431535707736-hmqhc0jht892fgmr9qho0pldcehac3qf.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.maidmatchApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
