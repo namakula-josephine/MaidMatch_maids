@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:lottie/lottie.dart';
+import 'package:maidsmatch_maids/jobs.dart';
 import 'package:maidsmatch_maids/utils/app_styles.dart';
 
 class WelcomePage extends StatefulWidget {
@@ -23,14 +24,10 @@ class _WelcomePageState extends State<WelcomePage> {
         ),
       ),
       drawer: Drawer(
-        backgroundColor: Colors.lightBlueAccent,
+        backgroundColor: Colors.orangeAccent.shade100,
         child: Column(
           children: const [
             DrawerHeader(child: Icon(Icons.favorite)),
-            ListTile(
-              leading: Icon(Icons.home),
-              title: Text('D A S H B O A R D'),
-            ),
             ListTile(
               leading: Icon(Icons.chat),
               title: Text('M E S S A G E'),
@@ -61,8 +58,13 @@ class _WelcomePageState extends State<WelcomePage> {
                   Container(
                     width: 100,
                     height: 100,
-                    child:LottieBuilder.asset("assets/wallet.json",
-                        ),
+                    child:Column(
+                      children: [
+                        Text("Wallet"),
+                        LottieBuilder.asset("assets/wallet.json",
+                            ),
+                      ],
+                    ),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(16), 
@@ -80,8 +82,15 @@ class _WelcomePageState extends State<WelcomePage> {
                   Container(
                     width: 100,
                     height: 100,
-                    child:LottieBuilder.asset("assets/animation_llb16u5r.json",
-                        ),
+                    child:Column(
+                      children: [
+                          Text("Performace" ),
+                          Gap(10),
+                        LottieBuilder.asset("assets/animation_llb16u5r.json",
+                        height: 50,
+                            ),
+                      ],
+                    ),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(16), 
@@ -96,63 +105,38 @@ class _WelcomePageState extends State<WelcomePage> {
                     ),
                     margin: EdgeInsets.all(8), 
                   ),
-                  Container(
-                    width: 100,
-                    height: 100,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(16),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.withOpacity(0.5),
-                          spreadRadius: 2,
-                          blurRadius: 5,
-                          offset: Offset(0, 3),
-                        ),
-                      ],
+                  GestureDetector(
+                    onTap : () {
+                      
+                      Navigator.push(context, 
+                      MaterialPageRoute(builder: (context) => const  JobsScreen(),));
+                    },
+                    child: Container(
+                      width: 100,
+                      height: 100,
+                      child: Column(
+                        children: [
+                          Text("Jobs"),
+                           Gap(10),
+                          LottieBuilder.asset("assets/jobs.json",
+                         
+                          height: 60,)
+                        ],
+                      ),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(16),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.5),
+                            spreadRadius: 2,
+                            blurRadius: 5,
+                            offset: Offset(0, 3),
+                          ),
+                        ],
+                      ),
+                      margin: EdgeInsets.all(8), 
                     ),
-                    margin: EdgeInsets.all(8), 
-                  ),
-                ],
-              ),
-              SizedBox(height: 16), 
-              
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    width: 100,
-                    height: 100,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(16), 
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.withOpacity(0.5),
-                          spreadRadius: 2,
-                          blurRadius: 5,
-                          offset: Offset(0, 3),
-                        ),
-                      ],
-                    ),
-                    margin: EdgeInsets.all(8), 
-                  ),
-                  Container(
-                    width: 100,
-                    height: 100,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(16), 
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.withOpacity(0.5),
-                          spreadRadius: 2,
-                          blurRadius: 5,
-                          offset: Offset(0, 3),
-                        ),
-                      ],
-                    ),
-                    margin: EdgeInsets.all(8), 
                   ),
                 ],
               ),

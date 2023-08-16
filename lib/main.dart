@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:maidsmatch_maids/welcome.dart';
+import 'package:maidsmatch_maids/admin/bottomnav.dart';
+//import 'package:maidsmatch_maids/welcome.dart';
+//import 'package:maidsmatch_maids/welcome_scrn.dart';
 
 
 void main() {
@@ -11,6 +13,6 @@ class MyApp extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false, home:welcampage());
+    return MaterialApp(debugShowCheckedModeBanner: false, home: botttomnav());
   }
 }
