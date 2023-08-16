@@ -39,10 +39,10 @@
               "client_type": 3
             },
             {
-              "client_id": "431535707736-hmqhc0jht892fgmr9qho0pldcehac3qf.apps.googleusercontent.com",
+              "client_id": "431535707736-6u5nvs4s7n8ef9varec1ei0g17qgskrb.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.example.maidmatchApp"
+                "bundle_id": "com.example.maidsmatchMaids.RunnerTests"
               }
             }
           ]
@@ -75,10 +75,10 @@
               "client_type": 3
             },
             {
-              "client_id": "431535707736-hmqhc0jht892fgmr9qho0pldcehac3qf.apps.googleusercontent.com",
+              "client_id": "431535707736-6u5nvs4s7n8ef9varec1ei0g17qgskrb.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.example.maidmatchApp"
+                "bundle_id": "com.example.maidsmatchMaids.RunnerTests"
               }
             }
           ]

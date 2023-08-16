@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:maidsmatch_maids/homepage.dart';
+//import 'package:maidsmatch_maids/homepage.dart';
 import 'package:maidsmatch_maids/services/auth_provider.dart';
 import 'package:maidsmatch_maids/setupUser.dart';
 import 'package:maidsmatch_maids/utils/utils.dart';
+import 'package:maidsmatch_maids/welcome_scrn.dart';
 import 'package:pinput/pinput.dart';
 import 'package:provider/provider.dart';
 
@@ -130,7 +131,7 @@ class _OtpScreenState extends State<OtpScreen> {
         ap.checkExistingUser().then((value) async {
          if(value == true){
             Navigator.pushAndRemoveUntil(context, MaterialPageRoute(
-            builder: (context) => const WelcomePage()),
+            builder: (context) => const WelcomeScreen()),
             (route) => false); 
           
          }else{

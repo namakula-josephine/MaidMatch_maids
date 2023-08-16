@@ -106,7 +106,7 @@ try {
 //database oprations
 
 Future<bool> checkExistingUser() async {
-  DocumentSnapshot snapshot = await _firebaseFirestore.collection("users").doc(_uid).get();
+  DocumentSnapshot snapshot = await _firebaseFirestore.collection("maid").doc(_uid).get();
   if(snapshot.exists){
 
     print("user exits");
@@ -137,7 +137,7 @@ void saveUserDatatoFirebase({
       });
       _userModel =userModel;
 
-      await _firebaseFirestore.collection("users").doc(_uid).set(userModel.toMap()).then((value){
+      await _firebaseFirestore.collection("maid").doc(_uid).set(userModel.toMap()).then((value){
         onSuccess();
         _isLoading =false;
         notifyListeners();

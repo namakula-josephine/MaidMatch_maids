@@ -50,7 +50,7 @@ class _AdminDashState extends State<AdminDash> {
           child: Column(
             children: [
               Gap(30),
-              Text("hello, user!"),
+              Text("hello, admin!"),
               Gap(30),
 
               Row(
@@ -148,6 +148,15 @@ class _AdminDashState extends State<AdminDash> {
                   Container(
                     width: 100,
                     height: 100,
+                    child: Column(
+                      children: [
+                        Text("Orders"),
+                        LottieBuilder.asset("assets/orders.json",
+                         
+                          height: 60,)
+
+                      ],
+                    ),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(16), 
