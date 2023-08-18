@@ -175,7 +175,7 @@ void storeData () async {
     profilePic: "", 
     createdAt: "", 
     phoneNumber: "",
-    role: "",
+    role: roleContoller.text.trim(),
     uid: ""
      );
      if (image!=null){
