@@ -19,7 +19,7 @@ class _NotificationsPageState extends State<NotificationsPage> {
 
   // Stream documents where the 'status' field is equal to 'active'
   Stream<QuerySnapshot> streamOrders() {
-    return userCollection.where('status', isEqualTo:  'pending').snapshots();
+    return userCollection.where('status', isEqualTo:  'Pending').snapshots();
   }
 
 
