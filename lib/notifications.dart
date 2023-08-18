@@ -44,6 +44,11 @@ class _NotificationsPageState extends State<NotificationsPage> {
           return Text('Something went wrong');
         }
 
+        if(snapshot.hasData){
+
+          print(snapshot.data);
+        }
+
         if (snapshot.connectionState == ConnectionState.waiting) {
           return Text("Loading");
         }
