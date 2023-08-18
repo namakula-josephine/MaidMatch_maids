@@ -1,9 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:fluttertoast/fluttertoast.dart';
+//import 'package:fluttertoast/fluttertoast.dart';
+import 'package:gap/gap.dart';
 import 'package:maidsmatch_maids/utils/app_styles.dart';
-import 'package:intl/intl.dart';
+//import 'package:intl/intl.dart';
 class NotificationsPage extends StatefulWidget {
   const NotificationsPage({super.key});
 
@@ -52,13 +53,19 @@ class _NotificationsPageState extends State<NotificationsPage> {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return Text("Loading");
         }
-
+        Gap(40);
         return ListView(
           children: snapshot.data!.docs.map((DocumentSnapshot document) {
           Map<String, dynamic> data = document.data()! as Map<String, dynamic>;
-            return ListTile(
-              title: Text(data['category']),
-              subtitle: Text(data['category']),
+            return Container(
+              
+              width: 50,
+              margin: EdgeInsets.symmetric(horizontal: 20,),
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              child: ListTile(
+                title: Text(data['category']),
+                subtitle: Text(data['category']),
+              ),
             );
           }).toList(),
         );

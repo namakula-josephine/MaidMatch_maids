@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:lottie/lottie.dart';
-import 'package:maidsmatch_maids/jobs.dart';
+//import 'package:maidsmatch_maids/jobs.dart';
 import 'package:maidsmatch_maids/utils/app_styles.dart';
 
 class WelcomePage extends StatefulWidget {
@@ -108,8 +108,6 @@ class _WelcomePageState extends State<WelcomePage> {
                   GestureDetector(
                     onTap : () {
                       
-                      Navigator.push(context, 
-                      MaterialPageRoute(builder: (context) => const  JobsScreen(),));
                     },
                     child: Container(
                       width: 100,
