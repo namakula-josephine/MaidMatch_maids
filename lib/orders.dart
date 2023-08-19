@@ -7,17 +7,16 @@ class GetOrderDetails extends StatelessWidget {
   final String documentId;
 
   GetOrderDetails(this.documentId);
- final CollectionReference userCollection =
-      FirebaseFirestore.instance.collection('orders');
+ 
 
       bool visible_cancel = true;
        bool visible_complete = true;
   @override
   Widget build(BuildContext context) {
-    CollectionReference users = FirebaseFirestore.instance.collection('orders');
+    CollectionReference orders = FirebaseFirestore.instance.collection('orders');
 
     return FutureBuilder<DocumentSnapshot>(
-      future: users.doc(documentId).get(),
+      future: orders.doc(documentId).get(),
       builder:
           (BuildContext context, AsyncSnapshot<DocumentSnapshot> snapshot) {
 
@@ -32,7 +31,7 @@ class GetOrderDetails extends StatelessWidget {
         if (snapshot.connectionState == ConnectionState.done) {
           Map<String, dynamic> data = snapshot.data!.data() as Map<String, dynamic>;
            final startdate =DateFormat('yyyy-MM-dd').format(data['date'].toDate().toLocal()).toString();
-           if (data['status']=='Taken'){
+           if (data['status']=='In Progress'){
             visible_cancel =true;
             visible_complete=true;
            }else{
@@ -57,16 +56,16 @@ class GetOrderDetails extends StatelessWidget {
               ),Visibility(
                 visible: visible_cancel,
                 child: ElevatedButton(onPressed: () async{
-                             await  userCollection.doc(documentId).update({
+                             await  orders.doc(documentId).update({
                                    'status':'Pending',
-                                 'maid_id':Null,
+                                 'maid_id':'',
                       });
                            
               }, child: Text('Cancel Order'))),
               Visibility(
                 visible: visible_complete,
                 child: ElevatedButton(onPressed: () async{
-                          await  userCollection.doc(documentId).update({
+                          await  orders.doc(documentId).update({
                                    'status':'Complete',
                                 
                       });
