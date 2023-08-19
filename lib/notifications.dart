@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 //import 'package:fluttertoast/fluttertoast.dart';
 import 'package:gap/gap.dart';
 import 'package:maidsmatch_maids/utils/app_styles.dart';
+import 'orders.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 //import 'package:intl/intl.dart';
 class NotificationsPage extends StatefulWidget {
@@ -98,7 +99,12 @@ class _NotificationsPageState extends State<NotificationsPage> {
                                  'maid_id':userId,
                       });
                                      
-                                 
+                Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => OrderView(parameter1: 'Pizza', parameter2: 3),
+              ),
+            );                   
                              
                       
                       }, child: Text('View')),
