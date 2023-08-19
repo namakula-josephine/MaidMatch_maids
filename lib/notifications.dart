@@ -82,7 +82,7 @@ class _NotificationsPageState extends State<NotificationsPage> {
                       child: ElevatedButton(onPressed:  ()async{
                        
                                   await  userCollection.doc('${data['id']}').update({
-                                   'status':'Taken',
+                                   'status':'In Progress',
                                  'maid_id':userId,
                       });
                                      
@@ -92,17 +92,11 @@ class _NotificationsPageState extends State<NotificationsPage> {
                       }, child: Text('Accept')),
                     ),Visibility(
                       visible: visible_order,
-                      child: ElevatedButton(onPressed:  ()async{
-                       
-                                  await  userCollection.doc('${data['id']}').update({
-                                   'status':'Taken',
-                                 'maid_id':userId,
-                      });
-                                     
+                      child: ElevatedButton(onPressed:  ()async{               
                 Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => OrderView(parameter1: 'Pizza', parameter2: 3),
+                builder: (context) => OrderView(customerid: data['userid'], orderID: data['id']),
               ),
             );                   
                              
