@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 //import 'package:fluttertoast/fluttertoast.dart';
 import 'package:gap/gap.dart';
 import 'package:maidsmatch_maids/utils/app_styles.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 //import 'package:intl/intl.dart';
 class NotificationsPage extends StatefulWidget {
   const NotificationsPage({super.key});
@@ -13,14 +14,16 @@ class NotificationsPage extends StatefulWidget {
 }
 
 class _NotificationsPageState extends State<NotificationsPage> {
-  final _auth = FirebaseAuth.instance;
-  
+
+     bool visible_accept = true;
+       bool visible_order = false;
      final CollectionReference userCollection =
       FirebaseFirestore.instance.collection('orders');
-
+ final userId = FirebaseAuth.instance.currentUser?.phoneNumber;
   // Stream documents where the 'status' field is equal to 'active'
   Stream<QuerySnapshot> streamOrders() {
-    return userCollection.where('status', isEqualTo:  'Pending').snapshots();
+    return userCollection.where(Filter.or(Filter('status', isEqualTo:  'Pending'),Filter("maid_id", isEqualTo: '${userId}')
+) ).snapshots();
   }
 
 
@@ -57,14 +60,52 @@ class _NotificationsPageState extends State<NotificationsPage> {
         return ListView(
           children: snapshot.data!.docs.map((DocumentSnapshot document) {
           Map<String, dynamic> data = document.data()! as Map<String, dynamic>;
+          if (data['maid_id']=='${userId}'){
+            visible_accept =false;
+            visible_order=true;
+          } else {
+            visible_accept =true;
+            visible_order=false;
+          }
             return Container(
               
               width: 50,
               margin: EdgeInsets.symmetric(horizontal: 20,),
               padding: EdgeInsets.symmetric(horizontal: 20),
               child: ListTile(
-                title: Text(data['category']),
-                subtitle: Text(data['category']),
+                title: Row(
+                  children: [
+                    Text(data['category']),SizedBox(width: 50,)
+                    ,Visibility(
+                      visible: visible_accept,
+                      child: ElevatedButton(onPressed:  ()async{
+                       
+                                  await  userCollection.doc('${data['id']}').update({
+                                   'status':'Taken',
+                                 'maid_id':userId,
+                      });
+                                     
+                                 
+                             
+                      
+                      }, child: Text('Accept')),
+                    ),Visibility(
+                      visible: visible_order,
+                      child: ElevatedButton(onPressed:  ()async{
+                       
+                                  await  userCollection.doc('${data['id']}').update({
+                                   'status':'Taken',
+                                 'maid_id':userId,
+                      });
+                                     
+                                 
+                             
+                      
+                      }, child: Text('View')),
+                    )
+                  ],
+                ),
+                subtitle: Text(data['status']),
               ),
             );
           }).toList(),
