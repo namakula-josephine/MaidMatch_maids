@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>48151818160-qvtp0g1v0q5nmtaahgugvtpofam0q3iv.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.48151818160-qvtp0g1v0q5nmtaahgugvtpofam0q3iv</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDwwmLOUE9Erts9H4WgJQscV0axSxz36rY</string>
+	<key>GCM_SENDER_ID</key>
+	<string>48151818160</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.maidsmatchMaids</string>
+	<key>PROJECT_ID</key>
+	<string>maidapp-c2c1e</string>
+	<key>STORAGE_BUCKET</key>
+	<string>maidapp-c2c1e.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:48151818160:ios:c53b0979ccb7b8c5b0f075</string>
+</dict>
+</plist>
