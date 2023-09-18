@@ -83,7 +83,7 @@ class _NotificationsPageState extends State<NotificationsPage> {
                        
                                   await  userCollection.doc('${data['id']}').update({
                                    'status':'In Progress',
-                                 'maid_id':userId,
+                                  'maid_id':userId,
                       });
                                      
                                  
