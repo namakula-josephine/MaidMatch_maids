@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:maidsmatch_maids/services/auth_provider.dart';
+import 'package:maidsmatch_maids/signin.dart';
 //import 'package:maidsmatch_maids/signin.dart';
 import 'package:maidsmatch_maids/user.dart';
 //import 'package:maidsmatch_maids/admin/bottomnav.dart';
@@ -33,7 +34,7 @@ class MyApp extends StatelessWidget {
       ],
       child: const MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: user(),
+        home: signIn(),
         title: "MAID MATCH",
       ),
     );

@@ -20,8 +20,8 @@ class _NotificationsPageState extends State<NotificationsPage> {
        bool visible_order = false;
      final CollectionReference userCollection =
       FirebaseFirestore.instance.collection('orders');
-// final userId = FirebaseAuth.instance.currentUser?.phoneNumber;
-final userId = '+256776332364';
+ final userId = FirebaseAuth.instance.currentUser?.phoneNumber;
+
   // Stream documents where the 'status' field is equal to 'active'
   Stream<QuerySnapshot> streamOrders() {
     return userCollection.where(Filter.or(Filter('status', isEqualTo:  'Pending'),Filter("maid_id", isEqualTo: '${userId}')
