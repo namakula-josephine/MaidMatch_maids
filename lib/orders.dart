@@ -128,7 +128,8 @@ class _OrderViewState extends State<OrderView> {
           radius: 80, // Adjust the size as needed
           backgroundImage: Image.network(data['profilePic']??"https://cdn.vectorstock.com/i/preview-1x/66/14/default-avatar-photo-placeholder-profile-picture-vector-21806614.jpg").image,
         ),
-      ), Row(
+      ),
+       Row(
         children: [
           Text('Customer Name:'),SizedBox(width: 10,),Text(data['name']??"")
         ],
