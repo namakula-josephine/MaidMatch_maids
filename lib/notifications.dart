@@ -20,7 +20,8 @@ class _NotificationsPageState extends State<NotificationsPage> {
        bool visible_order = false;
      final CollectionReference userCollection =
       FirebaseFirestore.instance.collection('orders');
- final userId = FirebaseAuth.instance.currentUser?.phoneNumber;
+// final userId = FirebaseAuth.instance.currentUser?.phoneNumber;
+final userId = '+256776332364';
   // Stream documents where the 'status' field is equal to 'active'
   Stream<QuerySnapshot> streamOrders() {
     return userCollection.where(Filter.or(Filter('status', isEqualTo:  'Pending'),Filter("maid_id", isEqualTo: '${userId}')
@@ -46,13 +47,10 @@ class _NotificationsPageState extends State<NotificationsPage> {
         stream: streamOrders(),
       builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
         if (snapshot.hasError) {
+           print("Error: ${snapshot.error}");
           return Text('Something went wrong');
         }
 
-        if(snapshot.hasData){
-
-          print(snapshot.data);
-        }
 
         if (snapshot.connectionState == ConnectionState.waiting) {
           return Text("Loading");
